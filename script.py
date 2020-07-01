@@ -43,8 +43,10 @@ if __name__ == "__main__":
             else:
                 records = records.append(record)
 
-        output_path = os.path.join(output_dir, 'records.csv')
-        records.to_csv(output_path)
+            if records.empty: continue
+            
+            output_path = os.path.join(output_dir, 'records.csv')
+            records.to_csv(output_path)
 
         time.sleep(10)
         
